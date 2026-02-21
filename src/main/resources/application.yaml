@@ -1,0 +1,28 @@
+quarkus:
+  application:
+    name: tracker-service
+  http:
+    port: 8083
+  grpc:
+    server:
+      port: 9000
+      host: 0.0.0.0
+    clients:
+      alvoracore:
+        host: localhost
+        port: 9001
+  redis:
+    hosts: redis://localhost:6379
+    timeout: 2s
+
+traccar:
+  url: http://localhost:5055
+  timeout: 5
+
+alvoracore:
+  url: http://localhost:8080
+  timeout: 3
+
+position:
+  cache:
+    ttl: 300
