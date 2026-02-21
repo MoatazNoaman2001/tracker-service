@@ -9,18 +9,18 @@ quarkus:
       host: 0.0.0.0
     clients:
       alvoracore:
-        host: localhost
-        port: 9001
+        host: ${ALVORACORE_GRPC_HOST:localhost}
+        port: ${ALVORACORE_GRPC_PORT:9001}
   redis:
-    hosts: redis://localhost:6379
+    hosts: ${QUARKUS_REDIS_HOSTS:redis://localhost:6379}
     timeout: 2s
 
 traccar:
-  url: http://localhost:5055
+  url: ${TRACCAR_URL:http://localhost:5055}
   timeout: 5
 
 alvoracore:
-  url: http://localhost:8080
+  url: ${ALVORACORE_URL:http://localhost:8080}
   timeout: 3
 
 position:
